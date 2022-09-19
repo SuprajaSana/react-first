@@ -1,0 +1,54 @@
+import React from 'react';
+
+import NewExpense from './components/NewExpenses/NewExpense';
+import Expenses from './components/Expenses/Expenses';
+
+const App=() =>
+{
+  const expenses=
+  [
+    {
+      id:'e1',
+      title:'Car Insurance',
+      date:new Date(2022, 8, 14),
+      amount:1000,
+      LocationOfExpenditure:'Insurance office',
+    },
+    {
+      id:'e2',
+      title:'Health Insurance',
+      date:new Date(2022, 8, 15),
+      amount:2000,
+      LocationOfExpenditure:'Online',
+    },
+    {
+      id:'e3',
+      title:'Food',
+      date:new Date(2022, 8, 16),
+      amount:500,
+      LocationOfExpenditure:'Restaurant',
+    },
+    {
+      id:'e4',
+      title:'Electricity Bill',
+      date:new Date(2022, 8, 17),
+      amount:1000,
+      LocationOfExpenditure:'Power station',
+    },
+  ];
+
+  const addExpenseHandler=(expense) =>
+  {
+    console.log('in App.js');
+    console.log(expense);
+  }
+
+  return(
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <Expenses items={expenses}></Expenses>
+    </div>
+  );
+}
+
+export default App;
